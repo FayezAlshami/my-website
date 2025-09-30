@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="فايز الشامي - مبرمج بوتات تيليجرام ومطور أنظمة مؤتمتة، متخصص في تطوير Back-End وأنظمة الدفع"
+    />
+    <meta
+      name="keywords"
+      content="فايز الشامي, بوتات تيليجرام, تطوير مواقع, Django, FastAPI, Python"
+    />
+    <title>فايز الشامي | مبرمج بوتات و مطوّر أنظمة مؤتمتة</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="main-header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <a href="#hero">
+              <span class="logo-icon">👾</span>
+              <span class="logo-text">فايز الشامي</span>
+            </a>
+          </div>
+          <div class="nav-menu">
+            <a href="#about" class="nav-link">عنّي</a>
+            <a href="#services" class="nav-link">خدماتي</a>
+            <a href="#projects" class="nav-link">مشاريعي</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#contact" class="nav-link">تواصل معي</a>
+            <button class="lang-switcher">
+              <i class="fas fa-globe"></i> EN
+            </button>
+          </div>
+          <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text" data-aos="fade-left">
+            <h1 class="hero-title">
+              مرحباً، أنا <span class="highlight">فايز الشامي</span>
+            </h1>
+            <p class="hero-subtitle">
+              👨‍💻 مبرمج بوتات تيليجرام و مطوّر أنظمة مؤتمتة
+            </p>
+            <div class="hero-divider"></div>
+            <p class="hero-description">
+              أبني حلول عملية واحترافية في تطوير بوتات تيليجرام، أنظمة الدفع
+              المؤتمتة، الـBack-End، والأتمتة. حالياً طالب IT وأدرس CCNA لتعزيز
+              خبرتي في الشبكات.
+            </p>
+            <p class="hero-description">
+              أعمل مع فريق Full-Stack متخصص في تطوير المواقع والتطبيقات، نحول
+              الأفكار إلى مشاريع متكاملة — من التصميم إلى التسليم — مع أعلى
+              معايير الأمان، الكفاءة، والأتمتة.
+            </p>
+            <div class="hero-buttons">
+              <a href="#services" class="btn btn-primary">
+                <i class="fas fa-rocket"></i> استكشف خدماتي
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <i class="fas fa-paper-plane"></i> تواصل معي
+              </a>
+            </div>
+          </div>
+          <div class="hero-image" data-aos="fade-right">
+            <div class="image-wrapper">
+              <img src="images/myphoto.jpg" alt="فايز الشامي" />
+              <div class="image-glow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">🖥 عنّي</h2>
+        <div class="about-content">
+          <div class="about-text" data-aos="fade-up">
+            <p>
+              مطور متخصص في بناء أنظمة احترافية باستخدام
+              <strong>Python</strong>، <strong>Django</strong>،
+              <strong>FastAPI</strong>، و<strong>Flask</strong>. خبرة تزيد عن
+              سنتين في تطوير بوتات تيليجرام المعقدة والأنظمة المؤتمتة.
+            </p>
+            <p>
+              أقدم حلول برمجية متكاملة تشمل تطوير واجهات API، قواعد بيانات
+              PostgreSQL و MySQL، وأنظمة دفع ذكية تعمل حتى بدون API رسمي.
+            </p>
+          </div>
+          <div class="skills-grid" data-aos="fade-up">
+            <div class="skill-item">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-server"></i>
+              <span>Django</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-bolt"></i>
+              <span>FastAPI</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-telegram"></i>
+              <span>Telegram Bots</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-database"></i>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-network-wired"></i>
+              <span>CCNA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">🔥 خدماتي الرئيسية</h2>
+        <div class="services-grid">
+          <div class="service-card" data-aos="zoom-in">
+            <div class="service-icon">
+              <i class="fab fa-telegram"></i>
+            </div>
+            <h3>تطوير بوتات تيليجرام</h3>
+            <p>
+              بوتات احترافية لمتاجر الشحن، أنظمة الوكلاء، الخدمات الطلابية،
+              وساطة العملات، وإدارة المنتجات.
+            </p>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="service-icon">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <h3>أنظمة دفع مؤتمتة</h3>
+            <p>
+              بناء أنظمة دفع ذكية والتكامل مع بوابات محلية ودولية — حتى في غياب
+              API رسمي.
+            </p>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>تطوير APIs مخصصة</h3>
+            <p>
+              تصميم وتطوير واجهات برمجية للتكامل مع أي منصة خارجية بأعلى معايير
+              الأمان.
+            </p>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="service-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>أتمتة العمليات</h3>
+            <p>
+              حلول أتمتة ذكية لتبسيط سير العمل وزيادة الكفاءة مع صيانة ودعم تقني
+              مستمر.
+            </p>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>تطوير مواقع وتطبيقات</h3>
+            <p>
+              تطوير Full-Stack لمواقع وتطبيقات متكاملة باستخدام Django و
+              FastAPI.
+            </p>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="service-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>أمان وموثوقية</h3>
+            <p>
+              تطبيق أفضل ممارسات الأمان السيبراني وبناء أنظمة قابلة للتوسع
+              والاستمرارية.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">📱 العروض الجاهزة</h2>
+        <p class="section-subtitle" data-aos="fade-up">
+          قابلة للتخصيص حسب طلبك
+        </p>
+        <div class="packages-grid">
+          <div class="package-card basic" data-aos="flip-up">
+            <div class="package-header">
+              <h3>🔴 الباقة الأساسية</h3>
+              <p class="package-subtitle">Basic Bot Package</p>
+            </div>
+            <div class="package-body">
+              <ul class="package-features">
+                <li><i class="fas fa-check"></i> بوت متجر يدوي</li>
+                <li><i class="fas fa-check"></i> لوحة إدارة أساسية</li>
+                <li><i class="fas fa-check"></i> بوابة دفع يدوية</li>
+              </ul>
+            </div>
+            <div class="package-pricing">
+              <div class="price-option">
+                <span class="price">10$</span>
+                <span class="period">شهرياً</span>
+              </div>
+              <div class="price-divider">أو</div>
+              <div class="price-option highlight">
+                <span class="price">40$</span>
+                <span class="period">مدى الحياة</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="package-card automation"
+            data-aos="flip-up"
+            data-aos-delay="100"
+          >
+            <div class="package-badge">الأكثر طلباً</div>
+            <div class="package-header">
+              <h3>🔴 الباقة المؤتمتة</h3>
+              <p class="package-subtitle">Full Automation Package</p>
+            </div>
+            <div class="package-body">
+              <ul class="package-features">
+                <li><i class="fas fa-check"></i> بوت احترافي متكامل</li>
+                <li><i class="fas fa-check"></i> API مخصص</li>
+                <li><i class="fas fa-check"></i> بوابة دفع تلقائية (Crypto)</li>
+                <li><i class="fas fa-check"></i> لوحة تحكم شاملة</li>
+              </ul>
+            </div>
+            <div class="package-pricing">
+              <div class="price-option highlight">
+                <span class="price">50$</span>
+                <span class="period">لكل خدمة</span>
+              </div>
+              <p class="discount-note">مع حسومات عند تعدد الخدمات</p>
+            </div>
+          </div>
+
+          <div
+            class="package-card syriatel"
+            data-aos="flip-up"
+            data-aos-delay="200"
+          >
+            <div class="package-header">
+              <h3>🔴 سيريتل كاش أوتو</h3>
+              <p class="package-subtitle">Syriatel Cash Auto</p>
+            </div>
+            <div class="package-body">
+              <ul class="package-features">
+                <li><i class="fas fa-check"></i> أتمتة الدفع</li>
+                <li><i class="fas fa-check"></i> جلب سجلات وأرصدة</li>
+                <li><i class="fas fa-check"></i> لشهر كامل</li>
+              </ul>
+            </div>
+            <div class="package-pricing">
+              <div class="price-option highlight">
+                <span class="price">3$</span>
+                <span class="period">لكل رقم</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="package-card student"
+            data-aos="flip-up"
+            data-aos-delay="300"
+          >
+            <div class="package-header">
+              <h3>🔴 بوت طلاب / كاتالوج</h3>
+              <p class="package-subtitle">Student & Catalog Bot</p>
+            </div>
+            <div class="package-body">
+              <ul class="package-features">
+                <li><i class="fas fa-check"></i> عرض وسائط وملفات</li>
+                <li><i class="fas fa-check"></i> متابعة الأعضاء</li>
+                <li><i class="fas fa-check"></i> إرسال جماعي</li>
+              </ul>
+            </div>
+            <div class="package-pricing">
+              <div class="price-option highlight">
+                <span class="price">50$</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">💡 مشاريعي المميزة</h2>
+        <div class="projects-grid">
+          <div class="project-card" data-aos="fade-up">
+            <div class="project-icon">
+              <i class="fab fa-telegram"></i>
+            </div>
+            <h3>@Community_DTC_BOT</h3>
+            <p>بوت إدارة مجتمع الجامعة - خدمات، علامات، ومحاضرات متكاملة</p>
+            <a
+              href="https://t.me/Community_DTC_BOT"
+              target="_blank"
+              class="project-link"
+            >
+              زيارة البوت <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>@Science_2022bot</h3>
+            <p>خدمة طلابية تعليمية شاملة</p>
+            <a
+              href="https://t.me/Science_2022bot"
+              target="_blank"
+              class="project-link"
+            >
+              زيارة البوت <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-icon">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <h3>@game_store11_bot</h3>
+            <p>متجر شحن ألعاب متكامل مع نظام دفع تلقائي</p>
+            <a
+              href="https://t.me/game_store11_bot"
+              target="_blank"
+              class="project-link"
+            >
+              زيارة البوت <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-icon">
+              <i class="fas fa-gift"></i>
+            </div>
+            <h3>@GAMA_CARD2_BOT</h3>
+            <p>نظام بطاقات هدايا ووكلاء احترافي</p>
+            <a
+              href="https://t.me/GAMA_CARD2_BOT"
+              target="_blank"
+              class="project-link"
+            >
+              زيارة البوت <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="project-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>@SyriatelCash_Bot</h3>
+            <p>نظام دفع عبر سيريتل كاش مع أتمتة كاملة</p>
+            <a
+              href="https://t.me/SyriatelCash_Bot"
+              target="_blank"
+              class="project-link"
+            >
+              زيارة البوت <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="project-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>+10 مشاريع أخرى</h3>
+            <p>بوتات متاجر، أنظمة وكلاء، وحلول مخصصة للعملاء</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio / Websites Section -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">🌐 المواقع والتطبيقات</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-card" data-aos="zoom-in">
+            <div class="portfolio-image">
+              <div class="portfolio-placeholder">
+                <i class="fas fa-globe"></i>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <h3>magnustech.pro</h3>
+              <p>موقع خدماتي الرئيسي - عرض شامل للخدمات والباقات</p>
+              <a
+                href="http://magnustech.pro/"
+                target="_blank"
+                class="portfolio-link"
+              >
+                زيارة الموقع <i class="fas fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="portfolio-image">
+              <div class="portfolio-placeholder">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <h3>fayezalshami.com</h3>
+              <p>موقعي الشخصي - قيد التطوير</p>
+              <span class="coming-soon-badge">قريباً</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section id="payment" class="payment-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">👛 طرق الدفع المتوفرة</h2>
+        <p class="section-subtitle" data-aos="fade-up">
+          أدعم أغلب طرق الدفع العالمية والمحلية
+        </p>
+        <div class="payment-grid" data-aos="zoom-in">
+          <div class="payment-item">
+            <i class="fab fa-paypal"></i>
+            <span>PayPal</span>
+          </div>
+          <div class="payment-item">
+            <i class="fab fa-bitcoin"></i>
+            <span>Binance</span>
+          </div>
+          <div class="payment-item">
+            <i class="fas fa-wallet"></i>
+            <span>Payeer</span>
+          </div>
+          <div class="payment-item">
+            <i class="fas fa-coins"></i>
+            <span>CoinEx</span>
+          </div>
+          <div class="payment-item">
+            <i class="fab fa-ethereum"></i>
+            <span>Crypto</span>
+          </div>
+          <div class="payment-item">
+            <i class="fas fa-credit-card"></i>
+            <span>Visa / MasterCard</span>
+          </div>
+          <div class="payment-item">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Syriatel Cash</span>
+          </div>
+          <div class="payment-item">
+            <i class="fas fa-mobile-alt"></i>
+            <span>MTN Cash</span>
+          </div>
+          <div class="payment-item">
+            <i class="fas fa-university"></i>
+            <span>Bemo Bank</span>
+          </div>
+          <div class="payment-item">
+            <i class="fas fa-money-check-alt"></i>
+            <span>Sham Cash</span>
+          </div>
+          <div class="payment-item">
+            <i class="fas fa-landmark"></i>
+            <span>بنك الراجحي</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Me Section -->
+    <section id="why-me" class="why-me-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">💬 لماذا تختارني؟</h2>
+        <div class="why-me-grid">
+          <div class="why-me-card" data-aos="fade-up">
+            <div class="why-me-icon">🧠</div>
+            <h3>خبرة عملية</h3>
+            <p>مشاريع حقيقية وربط APIs فعّال</p>
+          </div>
+          <div class="why-me-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-me-icon">⚡️</div>
+            <h3>فريق Full-Stack</h3>
+            <p>جاهز للتنفيذ والدعم الفوري</p>
+          </div>
+          <div class="why-me-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="why-me-icon">🔐</div>
+            <h3>برمجة آمنة</h3>
+            <p>كود مرتب مع مراقبة وأتمتة تحكم</p>
+          </div>
+          <div class="why-me-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="why-me-icon">🕐</div>
+            <h3>مرونة كاملة</h3>
+            <p>دعم لأنظمة دفع دولية ومحلية</p>
+          </div>
+          <div class="why-me-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="why-me-icon">⚙️</div>
+            <h3>دعم مستمر</h3>
+            <p>ما بعد التسليم مع تحديثات مدفوعة</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Offer Section -->
+    <section class="special-offer-section">
+      <div class="container">
+        <div class="special-offer-content" data-aos="zoom-in">
+          <div class="offer-icon">💡</div>
+          <h2>ملاحظة مهمة</h2>
+          <p>
+            أقدّم <strong>مجاناً</strong> عرضاً فنياً أولياً (Specification)
+            لمشروعك خلال <strong>24 ساعة</strong>.
+          </p>
+          <p>
+            كل ما عليك هو إرسال فكرتك أو متطلباتك، وسأحولها إلى خطة عمل واضحة
+            ومهيكلة قابلة للتنفيذ مباشرة.
+          </p>
+          <a href="#contact" class="btn btn-primary">ابدأ مشروعك الآن</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">✉️ تواصل معي</h2>
+        <p class="contact-intro" data-aos="fade-up">
+          متاح للمشاريع الحرة، حلول الأتمتة، وتطوير الأنظمة
+        </p>
+
+        <div class="contact-grid">
+          <a
+            href="https://t.me/Fayez_Alshami"
+            target="_blank"
+            class="contact-card"
+            data-aos="zoom-in"
+          >
+            <i class="fab fa-telegram"></i>
+            <span>Telegram</span>
+          </a>
+          <a
+            href="https://wa.me/message/U4CH4MFWMZF2J1"
+            target="_blank"
+            class="contact-card"
+            data-aos="zoom-in"
+            data-aos-delay="50"
+          >
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+          <a
+            href="mailto:fayezalshami.dev@gmail.com"
+            class="contact-card"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+          </a>
+          <a
+            href="https://github.com/FayezAlshami"
+            target="_blank"
+            class="contact-card"
+            data-aos="zoom-in"
+            data-aos-delay="150"
+          >
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a
+            href="https://www.facebook.com/FayezAlshami.dev"
+            target="_blank"
+            class="contact-card"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <i class="fab fa-facebook"></i>
+            <span>Facebook</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/FayezAlshami"
+            target="_blank"
+            class="contact-card"
+            data-aos="zoom-in"
+            data-aos-delay="250"
+          >
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">© 2025 فايز الشامي. جميع الحقوق محفوظة.</p>
+          <p class="made-with">
+            صُنع بـ <span class="heart">❤️</span> في سوريا
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
