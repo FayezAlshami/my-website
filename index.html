@@ -5,13 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="فايز الشامي - مبرمج بوتات تيليجرام ومطور أنظمة مؤتمتة، متخصص في تطوير Back-End وأنظمة الدفع"
+      content="فايز الشامي - مبرمج بوتات تيليجرام ومطور أنظمة مؤتمتة، متخصص في تطوير Back-End وأنظمة الدفع. خبرة تزيد عن سنتين في تطوير بوتات تيليجرام المعقدة والأنظمة المؤتمتة."
     />
     <meta
       name="keywords"
-      content="فايز الشامي, بوتات تيليجرام, تطوير مواقع, Django, FastAPI, Python"
+      content="فايز الشامي, بوتات تيليجرام, تطوير مواقع, Django, FastAPI, Python, Telegram Bots, تطوير Back-End, أنظمة دفع مؤتمتة, أتمتة, Python Developer, Bot Developer"
     />
+    <meta name="author" content="فايز الشامي - Fayez Alshami" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Arabic, English" />
+    <meta
+      property="og:title"
+      content="فايز الشامي | مبرمج بوتات و مطوّر أنظمة مؤتمتة"
+    />
+    <meta
+      property="og:description"
+      content="مبرمج بوتات تيليجرام ومطور أنظمة مؤتمتة، متخصص في تطوير Back-End وأنظمة الدفع"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/logo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="فايز الشامي | مبرمج بوتات و مطوّر أنظمة مؤتمتة"
+    />
+    <meta
+      name="twitter:description"
+      content="مبرمج بوتات تيليجرام ومطور أنظمة مؤتمتة، متخصص في تطوير Back-End وأنظمة الدفع"
+    />
+    <meta name="twitter:image" content="images/logo.jpg" />
+    <link rel="canonical" href="https://fayezalshami.com" />
     <title>فايز الشامي | مبرمج بوتات و مطوّر أنظمة مؤتمتة</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg" />
+    <link rel="apple-touch-icon" href="images/logo.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,8 +53,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
     <!-- Header -->
     <header class="main-header">
@@ -34,7 +63,7 @@
         <nav class="navbar">
           <div class="logo">
             <a href="#hero">
-              <span class="logo-icon">👾</span>
+              <img src="images/logo.jpg" alt="فايز الشامي" class="logo-icon" />
               <span class="logo-text">فايز الشامي</span>
             </a>
           </div>
@@ -48,9 +77,17 @@
               <i class="fas fa-globe"></i> EN
             </button>
           </div>
-          <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+
+          <div id="scrollProgress"></div>
+
+          <div
+            class="mobile-menu-toggle"
+            onclick="toggleMobileMenu()"
+            aria-label="قائمة التنقل"
+          >
             <i class="fas fa-bars"></i>
           </div>
+          <div class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
         </nav>
       </div>
     </header>
@@ -64,9 +101,10 @@
             <h1 class="hero-title">
               مرحباً، أنا <span class="highlight">فايز الشامي</span>
             </h1>
-            <p class="hero-subtitle">
+            <p class="hero-subtitle" id="heroSubtitle">
               👨‍💻 مبرمج بوتات تيليجرام و مطوّر أنظمة مؤتمتة
             </p>
+
             <div class="hero-divider"></div>
             <p class="hero-description">
               أبني حلول عملية واحترافية في تطوير بوتات تيليجرام، أنظمة الدفع
@@ -103,19 +141,31 @@
     <!-- About Section -->
     <section id="about" class="about-section">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">🖥 عنّي</h2>
+        <h2 class="section-title" data-aos="fade-up" data-i18n="about.title">🖥 من أنا</h2>
         <div class="about-content">
           <div class="about-text" data-aos="fade-up">
-            <p>
-              مطور متخصص في بناء أنظمة احترافية باستخدام
-              <strong>Python</strong>، <strong>Django</strong>،
-              <strong>FastAPI</strong>، و<strong>Flask</strong>. خبرة تزيد عن
-              سنتين في تطوير بوتات تيليجرام المعقدة والأنظمة المؤتمتة.
+            <p data-i18n="about.description1">
+              أنا فايز الشامي، مبرمج بوتات تيليجرام و Back-End Developer ومتخصص في أتمتة الأنظمة. أمتلك سنتين من الخبرة الفعلية في بناء أنظمة عملية تساعد أصحاب المشاريع على تنظيم أعمالهم وتقليل العمل اليدوي قدر الإمكان. خلال هذه الفترة نفذت أكثر من 20 مشروع حقيقي بين بوتات تيليجرام، أنظمة دفع مؤتمتة، ولوحات تحكم لإدارة العمليات اليومية.
             </p>
-            <p>
-              أقدم حلول برمجية متكاملة تشمل تطوير واجهات API، قواعد بيانات
-              PostgreSQL و MySQL، وأنظمة دفع ذكية تعمل حتى بدون API رسمي.
-            </p>
+          </div>
+          
+          <!-- Statistics Cards -->
+          <div class="stats-grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-card">
+              <div class="stat-icon">📅</div>
+              <div class="stat-number" data-i18n="stats.experience">سنتان+</div>
+              <div class="stat-label" data-i18n="stats.experienceLabel">خبرة</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🚀</div>
+              <div class="stat-number" data-i18n="stats.projects">20+</div>
+              <div class="stat-label" data-i18n="stats.projectsLabel">مشروع منجز</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">⚙️</div>
+              <div class="stat-number" data-i18n="stats.systems">بوتات وأنظمة</div>
+              <div class="stat-label" data-i18n="stats.systemsLabel">أتمتة</div>
+            </div>
           </div>
           <div class="skills-grid" data-aos="fade-up">
             <div class="skill-item">
@@ -142,6 +192,18 @@
               <i class="fas fa-network-wired"></i>
               <span>CCNA</span>
             </div>
+            <div class="skill-item">
+              <i class="fab fa-flutter"></i>
+              <span>Flutter</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-php"></i>
+              <span>PHP</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-database"></i>
+              <span>MySQL</span>
+            </div>
           </div>
         </div>
       </div>
@@ -150,7 +212,7 @@
     <!-- Services Section -->
     <section id="services" class="services-section">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">🔥 خدماتي الرئيسية</h2>
+        <h2 class="section-title" data-aos="fade-up" data-i18n="sections.services">🔥 خدماتي الرئيسية</h2>
         <div class="services-grid">
           <div class="service-card" data-aos="zoom-in">
             <div class="service-icon">
@@ -221,11 +283,86 @@
       </div>
     </section>
 
+    <!-- Target Clients Section -->
+    <section id="target-clients" class="target-clients-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up" data-i18n="targetClients.title">👥 لمن هذه الخدمات؟</h2>
+        <div class="target-clients-content" data-aos="fade-up">
+          <p class="target-clients-intro" data-i18n="targetClients.intro">
+            خدماتي موجّهة لأصحاب المشاريع الرقمية والأشخاص الذين يريدون أنظمة عملية وواضحة بدلاً من العمل اليدوي المتكرر. بشكل خاص أعمل مع:
+          </p>
+          <div class="target-clients-list">
+            <div class="target-client-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="target-client-icon">🛒</div>
+              <h3 data-i18n="targetClients.item1.title">أصحاب متاجر الشحن</h3>
+              <p data-i18n="targetClients.item1.desc">أصحاب متاجر شحن الألعاب والمنتجات الرقمية.</p>
+            </div>
+            <div class="target-client-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="target-client-icon">👨‍🎓</div>
+              <h3 data-i18n="targetClients.item2.title">المجتمعات الطلابية</h3>
+              <p data-i18n="targetClients.item2.desc">أصحاب القنوات والمجتمعات الطلابية التي تحتاج إلى تنظيم الاشتراكات والطلبات.</p>
+            </div>
+            <div class="target-client-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="target-client-icon">🏢</div>
+              <h3 data-i18n="targetClients.item3.title">الشركات والأفراد</h3>
+              <p data-i18n="targetClients.item3.desc">الشركات والأفراد الذين يحتاجون إلى أنظمة دفع مؤتمتة وربط بين أكثر من منصة (بوت، موقع، بوابة دفع، قاعدة بيانات).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section id="workflow" class="workflow-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up" data-i18n="workflow.title">⚙️ كيف أعمل مع العميل؟</h2>
+        <div class="workflow-content" data-aos="fade-up">
+          <div class="workflow-steps">
+            <div class="workflow-step" data-aos="fade-up" data-aos-delay="100">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3 data-i18n="workflow.step1.title">إرسال الطلب</h3>
+                <p data-i18n="workflow.step1.desc">ترسل فكرتك أو طلبك وتشرح احتياجك بشكل مختصر.</p>
+              </div>
+            </div>
+            <div class="workflow-step" data-aos="fade-up" data-aos-delay="200">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3 data-i18n="workflow.step2.title">العرض الفني</h3>
+                <p data-i18n="workflow.step2.desc">أراجع طلبك وأرسل لك عرض فني وتقدير مبدئي للوقت والتكلفة.</p>
+              </div>
+            </div>
+            <div class="workflow-step" data-aos="fade-up" data-aos-delay="300">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3 data-i18n="workflow.step3.title">الاتفاق</h3>
+                <p data-i18n="workflow.step3.desc">نتّفق على المتطلبات النهائية، السعر، ومدّة التنفيذ.</p>
+              </div>
+            </div>
+            <div class="workflow-step" data-aos="fade-up" data-aos-delay="400">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3 data-i18n="workflow.step4.title">التطوير</h3>
+                <p data-i18n="workflow.step4.desc">أعمل على تطوير النظام أو البوت مع إرسال نماذج/تجارب أولية عند الحاجة.</p>
+              </div>
+            </div>
+            <div class="workflow-step" data-aos="fade-up" data-aos-delay="500">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h3 data-i18n="workflow.step5.title">التسليم والدعم</h3>
+                <p data-i18n="workflow.step5.desc">يتم التسليم النهائي مع فترة دعم بعد التسليم لمعالجة أي مشاكل أو تحسينات بسيطة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Packages Section -->
     <section id="packages" class="packages-section">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">📱 العروض الجاهزة</h2>
-        <p class="section-subtitle" data-aos="fade-up">
+        <h2 class="section-title" data-aos="fade-up" data-i18n="sections.packages">📱 العروض الجاهزة</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-i18n="sections.packagesSubtitle">
           قابلة للتخصيص حسب طلبك
         </p>
         <div class="packages-grid">
@@ -334,7 +471,7 @@
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">💡 مشاريعي المميزة</h2>
+        <h2 class="section-title" data-aos="fade-up" data-i18n="sections.projects">💡 مشاريعي المميزة</h2>
         <div class="projects-grid">
           <div class="project-card" data-aos="fade-up">
             <div class="project-icon">
@@ -425,7 +562,7 @@
     <!-- Portfolio / Websites Section -->
     <section id="portfolio" class="portfolio-section">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">🌐 المواقع والتطبيقات</h2>
+        <h2 class="section-title" data-aos="fade-up" data-i18n="sections.portfolio">🌐 المواقع والتطبيقات</h2>
         <div class="portfolio-grid">
           <div class="portfolio-card" data-aos="zoom-in">
             <div class="portfolio-image">
@@ -466,7 +603,7 @@
     <section id="payment" class="payment-section">
       <div class="container">
         <h2 class="section-title" data-aos="fade-up">👛 طرق الدفع المتوفرة</h2>
-        <p class="section-subtitle" data-aos="fade-up">
+        <p class="section-subtitle" data-aos="fade-up" data-i18n="sections.paymentSubtitle">
           أدعم أغلب طرق الدفع العالمية والمحلية
         </p>
         <div class="payment-grid" data-aos="zoom-in">
@@ -521,7 +658,7 @@
     <!-- Why Me Section -->
     <section id="why-me" class="why-me-section">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">💬 لماذا تختارني؟</h2>
+        <h2 class="section-title" data-aos="fade-up" data-i18n="sections.whyMe">💬 لماذا تختارني؟</h2>
         <div class="why-me-grid">
           <div class="why-me-card" data-aos="fade-up">
             <div class="why-me-icon">🧠</div>
@@ -557,16 +694,16 @@
       <div class="container">
         <div class="special-offer-content" data-aos="zoom-in">
           <div class="offer-icon">💡</div>
-          <h2>ملاحظة مهمة</h2>
-          <p>
+          <h2 data-i18n="specialOffer.title">ملاحظة مهمة</h2>
+          <p data-i18n="specialOffer.text1">
             أقدّم <strong>مجاناً</strong> عرضاً فنياً أولياً (Specification)
             لمشروعك خلال <strong>24 ساعة</strong>.
           </p>
-          <p>
+          <p data-i18n="specialOffer.text2">
             كل ما عليك هو إرسال فكرتك أو متطلباتك، وسأحولها إلى خطة عمل واضحة
             ومهيكلة قابلة للتنفيذ مباشرة.
           </p>
-          <a href="#contact" class="btn btn-primary">ابدأ مشروعك الآن</a>
+          <a href="#contact" class="btn btn-primary" data-i18n="specialOffer.btn">ابدأ مشروعك الآن</a>
         </div>
       </div>
     </section>
@@ -574,8 +711,8 @@
     <!-- Contact Section -->
     <footer id="contact" class="contact-section">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">✉️ تواصل معي</h2>
-        <p class="contact-intro" data-aos="fade-up">
+        <h2 class="section-title" data-aos="fade-up" data-i18n="sections.contact">✉️ تواصل معي</h2>
+        <p class="contact-intro" data-aos="fade-up" data-i18n="sections.contactIntro">
           متاح للمشاريع الحرة، حلول الأتمتة، وتطوير الأنظمة
         </p>
 
@@ -638,12 +775,22 @@
             <i class="fab fa-linkedin"></i>
             <span>LinkedIn</span>
           </a>
+          <a
+            href="https://www.reddit.com/user/FayezAlshami/"
+            target="_blank"
+            class="contact-card"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
+            <i class="fab fa-reddit"></i>
+            <span>Reddit</span>
+          </a>
         </div>
 
         <div class="footer-bottom">
           <p class="copyright">© 2025 فايز الشامي. جميع الحقوق محفوظة.</p>
           <p class="made-with">
-            صُنع بـ <span class="heart">❤️</span> في سوريا
+            <span class="heart">الموقع مازال قيد التطوير ترقبو التحديثات</span>
           </p>
         </div>
       </div>
@@ -655,7 +802,6 @@
     </button>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
-
