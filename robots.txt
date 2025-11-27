@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fayezalshami.com/sitemap.xml
+
