@@ -676,7 +676,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ============================================
 
 const TELEGRAM_CONFIG = {
-  botToken: "8459447990:AAE9yPVgoi6MicC1xa5Lc8SzhVT51k6y-yQ", // ضع التوكن هنا
+  botToken: "8524824336:AAE_hnSNPFoO3flOhqBs1qQ5eiGJykIHHE0", // ضع التوكن هنا
   chatId: "5049749756", // ضع الـ Chat ID هنا
 };
 
@@ -999,3 +999,4 @@ window.addEventListener("beforeunload", () => {
     )}`
   );
 });
+
