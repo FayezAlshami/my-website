@@ -1,0 +1,281 @@
+/* =========================
+   Page 404 — Creative & Animated
+========================= */
+
+.page-404 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 24px;
+}
+
+.error-404 {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Background orbs (floating gradient blurs) */
+.error-404__bg {
+  position: fixed;
+  inset: -50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.error-404__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: error-404-orb 12s ease-in-out infinite;
+}
+
+.error-404__orb--1 {
+  width: 40vmin;
+  height: 40vmin;
+  background: hsl(var(--accent) / 0.4);
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.error-404__orb--2 {
+  width: 30vmin;
+  height: 30vmin;
+  background: hsl(var(--accent) / 0.25);
+  bottom: 20%;
+  right: 10%;
+  animation-delay: -4s;
+}
+
+.error-404__orb--3 {
+  width: 25vmin;
+  height: 25vmin;
+  background: hsl(var(--accent) / 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -8s;
+}
+
+@keyframes error-404-orb {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.35;
+  }
+  33% {
+    transform: translate(5%, -8%) scale(1.05);
+    opacity: 0.45;
+  }
+  66% {
+    transform: translate(-6%, 5%) scale(0.95);
+    opacity: 0.3;
+  }
+}
+
+/* Subtle grid */
+.error-404__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: error-404-grid 20s linear infinite;
+}
+
+@keyframes error-404-grid {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(48px, 48px); }
+}
+
+/* Main content */
+.error-404__content {
+  position: relative;
+  z-index: 1;
+}
+
+/* 404 digits — glitch + gradient animation */
+.error-404__code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.05em;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-weight: 900;
+  font-size: clamp(4.5rem, 18vw, 10rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.error-404__digit {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    var(--text) 0%,
+    var(--text) 40%,
+    hsl(var(--accent)) 50%,
+    var(--text) 60%,
+    var(--text) 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: error-404-digit 3s ease-in-out infinite;
+  text-shadow: none;
+}
+
+.error-404__digit:nth-child(1) { animation-delay: 0s; }
+.error-404__digit:nth-child(2) { animation-delay: 0.15s; }
+.error-404__digit:nth-child(3) { animation-delay: 0.3s; }
+
+.error-404__digit--zero {
+  animation-name: error-404-digit-pulse;
+  transform-origin: center;
+}
+
+@keyframes error-404-digit {
+  0%, 100% {
+    background-position: 0% 50%;
+    filter: none;
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 12px hsl(var(--accent) / 0.5));
+  }
+}
+
+@keyframes error-404-digit-pulse {
+  0%, 100% {
+    transform: scale(1);
+    background-position: 0% 50%;
+  }
+  50% {
+    transform: scale(1.08);
+    background-position: 100% 50%;
+  }
+}
+
+/* Glitch effect on hover */
+.error-404__code:hover .error-404__digit {
+  animation: error-404-glitch 0.4s ease-out;
+}
+
+@keyframes error-404-glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 2px); }
+  40% { transform: translate(3px, -2px); }
+  60% { transform: translate(-2px, -1px); }
+  80% { transform: translate(2px, 1px); }
+  100% { transform: translate(0); }
+}
+
+.error-404__code:hover .error-404__digit--zero {
+  animation: error-404-glitch 0.4s ease-out;
+}
+
+/* Message */
+.error-404__message {
+  margin: 0 0 1.75rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 28ch;
+  margin-inline: auto;
+  animation: error-404-fade-up 0.7s ease-out 0.3s backwards;
+}
+
+@keyframes error-404-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button */
+.error-404__btn {
+  animation: error-404-fade-up 0.7s ease-out 0.5s backwards;
+}
+
+/* Floating dots */
+.error-404__float {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.error-404__dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: hsl(var(--accent) / 0.6);
+  animation: error-404-float 8s ease-in-out infinite;
+}
+
+.error-404__dot:nth-child(1) { left: 12%; top: 20%; animation-delay: 0s; }
+.error-404__dot:nth-child(2) { left: 85%; top: 25%; animation-delay: -1.5s; }
+.error-404__dot:nth-child(3) { left: 70%; top: 70%; animation-delay: -3s; }
+.error-404__dot:nth-child(4) { left: 18%; top: 75%; animation-delay: -4.5s; }
+.error-404__dot:nth-child(5) { left: 50%; top: 15%; animation-delay: -2s; }
+.error-404__dot:nth-child(6) { left: 45%; top: 85%; animation-delay: -5s; }
+
+@keyframes error-404-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(12px, -20px) scale(1.2);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(-8px, 10px) scale(0.9);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(15px, 8px) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.error-404__code {
+  animation: error-404-fade-up 0.8s ease-out backwards;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .error-404__orb,
+  .error-404__grid,
+  .error-404__digit,
+  .error-404__digit--zero,
+  .error-404__dot {
+    animation: none;
+  }
+
+  .error-404__code:hover .error-404__digit,
+  .error-404__code:hover .error-404__digit--zero {
+    animation: none;
+  }
+
+  .error-404__message,
+  .error-404__btn {
+    animation: error-404-fade-up 0.5s ease-out backwards;
+  }
+
+  .error-404__message { animation-delay: 0.2s; }
+  .error-404__btn { animation-delay: 0.3s; }
+}

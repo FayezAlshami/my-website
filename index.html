@@ -1,0 +1,1712 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- يتغير عبر JS حسب لون الثيم -->
+    <meta name="theme-color" content="#22c55e" id="themeColorMeta" />
+
+    <title>Portfolio | موقع شخصي</title>
+
+    <!-- Fonts (Monospace + Arabic fallback) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/main.js"></script>
+  </head>
+
+  <body>
+    <!-- SVG Icons -->
+    <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg">
+      <!-- UI -->
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path
+          d="M21 14.5A8.5 8.5 0 0 1 9.5 3a7 7 0 1 0 11.5 11.5Z"
+          fill="currentColor"
+        />
+      </symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Z" fill="currentColor" />
+        <path
+          d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol id="i-palette" viewBox="0 0 24 24">
+        <path
+          d="M12 3a9 9 0 0 0 0 18h1a3 3 0 0 0 3-3 2 2 0 0 1 2-2h1a3 3 0 0 0 3-3 10 10 0 0 0-10-10Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <circle cx="7.5" cy="10" r="1" fill="currentColor" />
+        <circle cx="10" cy="7.5" r="1" fill="currentColor" />
+        <circle cx="14" cy="7.5" r="1" fill="currentColor" />
+        <circle cx="16.5" cy="10" r="1" fill="currentColor" />
+      </symbol>
+      <symbol id="i-external" viewBox="0 0 24 24">
+        <path
+          d="M14 3h7v7"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M21 3 10 14"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M21 14v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-github" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.76.6-3.34-1.17-3.34-1.17-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.36 1.08 2.93.83.09-.65.35-1.08.64-1.33-2.2-.25-4.5-1.1-4.5-4.9 0-1.08.39-1.96 1.03-2.65-.1-.26-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.9-1.29 2.74-1.02 2.74-1.02.55 1.38.2 2.39.1 2.65.64.69 1.03 1.57 1.03 2.65 0 3.81-2.3 4.65-4.5 4.9.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"
+        />
+      </symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 9h4v12H3V9Zm7 0h3.8v1.64h.05A4.17 4.17 0 0 1 17.6 8.6c4 0 4.74 2.63 4.74 6.05V21h-4v-5.56c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95V21h-4V9Z"
+        />
+      </symbol>
+      <symbol id="i-telegram" viewBox="0 0 16 16">
+        <path
+          fill="currentColor"
+          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"
+        />
+      </symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 16 16">
+        <path
+          fill="currentColor"
+          d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592"
+        />
+        <path
+          fill="currentColor"
+          d="M11.609 9.587c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
+        />
+      </symbol>
+      <symbol id="i-facebook" viewBox="0 0 16 16">
+        <path
+          fill="currentColor"
+          d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+        />
+      </symbol>
+      <symbol id="i-reddit" viewBox="0 0 16 16">
+        <path
+          fill="currentColor"
+          d="M6.167 8a.83.83 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661m1.843 3.647c.315 0 1.403-.038 1.976-.611a.23.23 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83s.83-.381.83-.83a.831.831 0 0 0-1.66 0z"
+        />
+        <path
+          fill="currentColor"
+          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.828-1.165c-.315 0-.602.124-.812.325-.801-.573-1.9-.945-3.121-.993l.534-2.501 1.738.372a.83.83 0 1 0 .83-.869.83.83 0 0 0-.744.468l-1.938-.41a.2.2 0 0 0-.153.028.2.2 0 0 0-.086.134l-.592 2.788c-1.24.038-2.358.41-3.17.992-.21-.2-.496-.324-.81-.324a1.163 1.163 0 0 0-.478 2.224q-.03.17-.029.353c0 1.795 2.091 3.256 4.669 3.256s4.668-1.451 4.668-3.256c0-.114-.01-.238-.029-.353.401-.181.688-.592.688-1.069 0-.65-.525-1.165-1.165-1.165"
+        />
+      </symbol>
+      <symbol id="i-email" viewBox="0 0 16 16">
+        <path
+          fill="currentColor"
+          d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"
+        />
+      </symbol>
+      <symbol id="i-up" viewBox="0 0 24 24">
+        <path
+          d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8L6.4 13.4 5 12l7-7Z"
+          fill="currentColor"
+        />
+      </symbol>
+
+      <!-- Services icons -->
+      <symbol id="i-bot" viewBox="0 0 24 24">
+        <rect
+          x="5"
+          y="8"
+          width="14"
+          height="10"
+          rx="3"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path
+          d="M12 3v3M9 4.5h6"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <circle cx="10" cy="13" r="1" fill="currentColor" />
+        <circle cx="14" cy="13" r="1" fill="currentColor" />
+      </symbol>
+      <symbol id="i-payment-auto" viewBox="0 0 24 24">
+        <rect
+          x="3"
+          y="6"
+          width="18"
+          height="12"
+          rx="3"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path d="M3 10h18" stroke="currentColor" stroke-width="2" />
+        <path
+          d="M16.5 4.5 18 3l1.5 1.5M18 3v4"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-api" viewBox="0 0 24 24">
+        <path
+          d="M8 7 4 12l4 5M16 7l4 5-4 5M14 5l-4 14"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-automation" viewBox="0 0 24 24">
+        <circle
+          cx="12"
+          cy="12"
+          r="3"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path
+          d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17 5.6 18.4"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol id="i-dev" viewBox="0 0 24 24">
+        <rect
+          x="3"
+          y="4"
+          width="18"
+          height="16"
+          rx="3"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path
+          d="M9 10 7 12l2 2M15 10l2 2-2 2"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-shield-safe" viewBox="0 0 24 24">
+        <path
+          d="M12 3 5 6v6c0 4.4 2.8 7.6 7 9 4.2-1.4 7-4.6 7-9V6l-7-3Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="m9 12 2 2 4-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+
+      <!-- Payments icons -->
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <path
+          d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M11 19h2"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol id="i-card" viewBox="0 0 24 24">
+        <path
+          d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path d="M3 10h18" stroke="currentColor" stroke-width="2" />
+        <path
+          d="M7 15h4"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol id="i-eth" viewBox="0 0 24 24">
+        <path
+          d="M12 2 5.5 12 12 15.5 18.5 12 12 2Z"
+          fill="currentColor"
+          opacity="0.9"
+        />
+        <path
+          d="M12 16 5.5 12.5 12 22l6.5-9.5L12 16Z"
+          fill="currentColor"
+          opacity="0.75"
+        />
+      </symbol>
+      <symbol id="i-coins" viewBox="0 0 24 24">
+        <path
+          d="M12 6c4.4 0 8-1.34 8-3S16.4 0 12 0 4 1.34 4 3s3.6 3 8 3Z"
+          transform="translate(0 4)"
+          fill="currentColor"
+          opacity="0.9"
+        />
+        <path
+          d="M4 7c0 1.66 3.6 3 8 3s8-1.34 8-3"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M4 12c0 1.66 3.6 3 8 3s8-1.34 8-3"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M4 17c0 1.66 3.6 3 8 3s8-1.34 8-3"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol id="i-wallet" viewBox="0 0 24 24">
+        <path
+          d="M3 7a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path
+          d="M21 9h-6a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <circle cx="16" cy="12" r="1" fill="currentColor" />
+      </symbol>
+      <symbol id="i-bitcoin" viewBox="0 0 24 24">
+        <path
+          d="M11 2h2v2h2a4 4 0 0 1 0 8h-6V4h4V2Zm0 10h6a4 4 0 0 1 0 8h-2v2h-2v-2h-2v2h-2v-2H9v-8h2Z"
+          fill="currentColor"
+          opacity="0.9"
+        />
+      </symbol>
+      <symbol id="i-paypal" viewBox="0 0 24 24">
+        <path
+          d="M7 21H4.7a1 1 0 0 1-1-1.2L6.2 4.3A2 2 0 0 1 8.1 3h7.2a5 5 0 0 1 1 9.9"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M10 21h-2l1-7h6a4 4 0 0 0 0-8h-2"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-bank" viewBox="0 0 24 24">
+        <path
+          d="M12 3 2 8h20L12 3Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M4 10v10M8 10v10M12 10v10M16 10v10M20 10v10"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path
+          d="M3 20h18"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol id="i-cash" viewBox="0 0 24 24">
+        <path
+          d="M3 7h18v10H3V7Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path
+          d="M7 10h2M15 10h2M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main" data-i18n="skip_to_content"
+      >تخطي إلى المحتوى</a
+    >
+
+    <!-- Header (hidden initially, appears on scroll) -->
+    <header class="header hidden" id="header">
+      <div class="container header__inner">
+        <a class="brand" href="#home" aria-label="Home">
+          <img class="brand__avatar" src="./image.png" alt="Avatar" />
+          <span class="brand__name" data-i18n="brand_name">فايز الشامي</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav__link" href="#about" data-i18n="nav_about">من أنا</a>
+          <a class="nav__link" href="#services" data-i18n="nav_services"
+            >خدماتي</a
+          >
+          <a class="nav__link" href="#projects" data-i18n="nav_projects"
+            >المشاريع</a
+          >
+          <a class="nav__link" href="#payments" data-i18n="nav_payments"
+            >طرق الدفع</a
+          >
+          <a class="nav__link" href="#contact" data-i18n="nav_contact">تواصل</a>
+        </nav>
+
+        <div class="header__actions">
+          <!-- Theme switch -->
+          <button
+            type="button"
+            id="theme-switcher"
+            class="theme-switcher"
+            aria-label="Toggle color theme"
+          >
+            <span
+              id="dark-theme-icon"
+              class="icon-wrapper icon-moon"
+              aria-hidden="true"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 11.5373 21.3065 11.4608 21.0672 11.8568C19.9289 13.7406 17.8615 15 15.5 15C11.9101 15 9 12.0899 9 8.5C9 6.13845 10.2594 4.07105 12.1432 2.93276C12.5392 2.69347 12.4627 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              id="light-theme-icon"
+              class="icon-wrapper icon-sun"
+              aria-hidden="true"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                  fill="currentColor"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V4C12.75 4.41421 12.4142 4.75 12 4.75C11.5858 4.75 11.25 4.41421 11.25 4V2C11.25 1.58579 11.5858 1.25 12 1.25ZM3.66865 3.71609C3.94815 3.41039 4.42255 3.38915 4.72825 3.66865L6.95026 5.70024C7.25596 5.97974 7.2772 6.45413 6.9977 6.75983C6.7182 7.06553 6.2438 7.08677 5.9381 6.80727L3.71609 4.77569C3.41039 4.49619 3.38915 4.02179 3.66865 3.71609ZM20.3314 3.71609C20.6109 4.02179 20.5896 4.49619 20.2839 4.77569L18.0619 6.80727C17.7562 7.08677 17.2818 7.06553 17.0023 6.75983C16.7228 6.45413 16.744 5.97974 17.0497 5.70024L19.2718 3.66865C19.5775 3.38915 20.0518 3.41039 20.3314 3.71609ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H4C4.41421 11.25 4.75 11.5858 4.75 12C4.75 12.4142 4.41421 12.75 4 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM19.25 12C19.25 11.5858 19.5858 11.25 20 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H20C19.5858 12.75 19.25 12.4142 19.25 12ZM17.0255 17.0252C17.3184 16.7323 17.7933 16.7323 18.0862 17.0252L20.3082 19.2475C20.6011 19.5404 20.601 20.0153 20.3081 20.3082C20.0152 20.6011 19.5403 20.601 19.2475 20.3081L17.0255 18.0858C16.7326 17.7929 16.7326 17.3181 17.0255 17.0252ZM6.97467 17.0253C7.26756 17.3182 7.26756 17.7931 6.97467 18.086L4.75244 20.3082C4.45955 20.6011 3.98468 20.6011 3.69178 20.3082C3.39889 20.0153 3.39889 19.5404 3.69178 19.2476L5.91401 17.0253C6.2069 16.7324 6.68177 16.7324 6.97467 17.0253ZM12 19.25C12.4142 19.25 12.75 19.5858 12.75 20V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V20C11.25 19.5858 11.5858 19.25 12 19.25Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </button>
+
+          <!-- Color picker -->
+          <div class="color-picker" id="colorPicker">
+            <button
+              class="icon-btn"
+              id="colorPickerToggle"
+              type="button"
+              aria-haspopup="dialog"
+              aria-expanded="false"
+              data-i18n-aria="color_picker_aria"
+              aria-label="اختر لون الموقع"
+            >
+              <svg aria-hidden="true"><use href="#i-palette"></use></svg>
+            </button>
+
+            <div
+              class="color-picker__panel"
+              id="colorPickerPanel"
+              role="dialog"
+              aria-label="Theme colors"
+            >
+              <div class="color-picker__title" data-i18n="color_picker_title">
+                لون الموقع
+              </div>
+
+              <div class="swatches" role="list">
+                <button
+                  class="swatch is-active"
+                  style="--swatch: #22c55e"
+                  data-color="#22c55e"
+                  aria-label="Green"
+                ></button>
+                <button
+                  class="swatch"
+                  style="--swatch: #06b6d4"
+                  data-color="#06b6d4"
+                  aria-label="Cyan"
+                ></button>
+                <button
+                  class="swatch"
+                  style="--swatch: #3b82f6"
+                  data-color="#3b82f6"
+                  aria-label="Blue"
+                ></button>
+                <button
+                  class="swatch"
+                  style="--swatch: #a855f7"
+                  data-color="#a855f7"
+                  aria-label="Purple"
+                ></button>
+                <button
+                  class="swatch"
+                  style="--swatch: #ec4899"
+                  data-color="#ec4899"
+                  aria-label="Pink"
+                ></button>
+                <button
+                  class="swatch"
+                  style="--swatch: #f97316"
+                  data-color="#f97316"
+                  aria-label="Orange"
+                ></button>
+                <button
+                  class="swatch"
+                  style="--swatch: #ef4444"
+                  data-color="#ef4444"
+                  aria-label="Red"
+                ></button>
+                <button
+                  class="swatch"
+                  style="--swatch: #eab308"
+                  data-color="#eab308"
+                  aria-label="Yellow"
+                ></button>
+              </div>
+
+              <div class="color-picker__row">
+                <label
+                  class="color-picker__label"
+                  for="customColor"
+                  data-i18n="custom_color_label"
+                  >لون مخصص</label
+                >
+                <input id="customColor" type="color" value="#22c55e" />
+              </div>
+
+              <p class="color-picker__hint" data-i18n="color_picker_hint">
+                سيتم حفظ اللون تلقائياً.
+              </p>
+            </div>
+          </div>
+
+          <!-- Language toggle -->
+          <button
+            class="pill-btn"
+            id="langToggle"
+            type="button"
+            aria-label="Toggle language"
+          >
+            EN
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section id="home" class="hero">
+        <!-- Background waves -->
+        <svg
+          class="hero__waves"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <g class="waves">
+            <path
+              d="M-200 640 C 100 420, 260 820, 560 600 S 1100 360, 1400 640"
+            />
+            <path
+              d="M-200 600 C 120 380, 280 780, 600 560 S 1080 340, 1400 600"
+            />
+            <path
+              d="M-200 560 C 140 340, 320 720, 640 520 S 1040 320, 1400 560"
+            />
+            <path
+              d="M-200 520 C 160 300, 340 680, 680 480 S 1000 300, 1400 520"
+            />
+            <path
+              d="M-200 480 C 180 260, 380 640, 720 440 S 960 280, 1400 480"
+            />
+            <path
+              d="M-200 440 C 220 220, 420 600, 760 400 S 940 260, 1400 440"
+            />
+            <path
+              d="M-200 400 C 240 200, 460 560, 800 360 S 900 240, 1400 400"
+            />
+            <path
+              d="M-200 360 C 260 160, 500 520, 840 320 S 860 220, 1400 360"
+            />
+            <path
+              d="M-200 320 C 280 140, 540 480, 880 280 S 820 200, 1400 320"
+            />
+            <path
+              d="M-200 280 C 300 120, 580 440, 920 240 S 780 180, 1400 280"
+            />
+            <path
+              d="M-200 240 C 340 100, 620 400, 960 200 S 740 160, 1400 240"
+            />
+          </g>
+        </svg>
+
+        <div class="container hero__content">
+          <h1 class="hero__title">
+            <span data-i18n="hero_title_before">أهلاً، أنا </span>
+            <span class="hero__name-wrap" id="heroNameWrap">
+              <span class="hero__name" data-i18n="hero_title_name">فايز</span>
+              <canvas class="hero__particles" id="heroParticles" aria-hidden="true"></canvas>
+            </span>
+            <span data-i18n="hero_title_after">!</span>
+          </h1>
+
+          <p class="hero__subtitle" data-i18n-html="hero_subtitle">
+            مطور ويب بخبرة، <span class="accent">أستمتع</span> ببناء منتجات
+            رقمية <span class="accent">سريعة</span> و<span class="accent"
+              >متاحة للجميع</span
+            >.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#about" data-i18n="hero_cta"
+              >من أنا</a
+            >
+            <a
+              class="btn btn--ghost"
+              href="#projects"
+              data-i18n="hero_cta_secondary"
+              >مشاريعي</a
+            >
+          </div>
+
+          <div class="scroll-hint" aria-hidden="true">
+            <span class="scroll-hint__mouse">
+              <span class="scroll-hint__wheel"></span>
+            </span>
+            <span class="scroll-hint__text" data-i18n="scroll_hint"
+              >اسحب للأسفل</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section section--about">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title" data-i18n="about_title">من أنا</h2>
+            <div class="section__underline"></div>
+            <p class="section__subtitle" data-i18n-html="about_subtitle">
+              هندسة أتمتة وبنية خلفية لأنظمة الدفع والتكاملات التقنية المعقدة.
+            </p>
+          </header>
+
+          <div class="about-intro reveal">
+            <p class="about-intro__text" data-i18n="about_brief">
+              أنا فايز الشامي، متخصص في هندسة الأتمتة وبناء Back-End لأنظمة
+              الدفع الرقمي والبوتات.
+            </p>
+          </div>
+
+          <div class="about-layout">
+            <article class="about-expertise reveal">
+              <h3 class="about-expertise__title" data-i18n="about_expertise_title">
+                مجالات خبرتي التقنية
+              </h3>
+              <div class="about-expertise__domains skill-groups" data-i18n-html="about_expertise_html">
+                <div class="skill-group">
+                  <h4 class="skill-group__title">Core Backend & Automation</h4>
+                  <div class="skill-tags">
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">FastAPI</span>
+                    <span class="skill-pill">Laravel</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="about-methodology reveal">
+              <h3 class="about-methodology__title" data-i18n="about_method_title">
+                منهجيتي في بناء الأنظمة
+              </h3>
+              <p class="about-methodology__intro" data-i18n="about_method_intro">
+                أتعامل مع النظام كمنظومة متكاملة: تدفق معاملات، تكاملات، مراقبة، وتشغيل مستمر.
+              </p>
+              <ol class="method-list" aria-label="Methodology steps">
+                <li data-i18n="about_method_1">تحليل تدفق المعاملة من المصدر حتى التسوية.</li>
+                <li data-i18n="about_method_2">تقسيم النظام إلى خدمات واضحة وحدود مسؤولية دقيقة.</li>
+                <li data-i18n="about_method_3">بناء تكاملات مرنة عبر APIs وWebhooks مع معالجة حالات الفشل.</li>
+                <li data-i18n="about_method_4">تطبيق تسجيل ومراقبة لحظية للعمليات الحساسة.</li>
+                <li data-i18n="about_method_5">نشر موثوق على VPS/Linux مع إدارة آمنة للوصول والخدمات.</li>
+                <li data-i18n="about_method_6">تحسين الأداء والاستمرارية قبل إضافة أي ميزة جديدة.</li>
+              </ol>
+            </article>
+          </div>
+
+          <div class="about-cta reveal">
+            <p class="about-cta__note" data-i18n="about_note">
+              أنا لا أبني سكربتات، أبني منظومات أتمتة متكاملة.
+            </p>
+            <a class="btn btn--primary about-cta__btn" href="#projects" data-i18n="about_btn_projects">اذهب إلى المشاريع</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="section section--services">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title" data-i18n="services_title">
+              خدماتي الرئيسية
+            </h2>
+            <div class="section__underline"></div>
+            <p class="section__subtitle" data-i18n="services_subtitle">
+              حلول عملية تجمع بين الأتمتة والأمان وقابلية التوسع.
+            </p>
+          </header>
+
+          <div class="services-grid">
+            <article class="service-card reveal">
+              <div class="service-card__icon">
+                <svg aria-hidden="true"><use href="#i-bot"></use></svg>
+              </div>
+              <h3 class="service-card__title" data-i18n="service_1_title">
+                تطوير بوتات تيليجرام
+              </h3>
+              <p class="service-card__desc" data-i18n="service_1_desc">
+                بوتات احترافية للمتاجر وأنظمة الوكلاء والخدمات الطلابية ووساطة
+                العملات.
+              </p>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-card__icon">
+                <svg aria-hidden="true"><use href="#i-payment-auto"></use></svg>
+              </div>
+              <h3 class="service-card__title" data-i18n="service_2_title">
+                أنظمة دفع مؤتمتة
+              </h3>
+              <p class="service-card__desc" data-i18n="service_2_desc">
+                بناء أنظمة دفع ذكية والتكامل مع بوابات محلية ودولية حتى بدون API
+                رسمي.
+              </p>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-card__icon">
+                <svg aria-hidden="true"><use href="#i-api"></use></svg>
+              </div>
+              <h3 class="service-card__title" data-i18n="service_3_title">
+                تطوير APIs مخصصة
+              </h3>
+              <p class="service-card__desc" data-i18n="service_3_desc">
+                تصميم وتطوير واجهات برمجية مرنة للتكامل مع أي منصة خارجية بأمان
+                عالي.
+              </p>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-card__icon">
+                <svg aria-hidden="true"><use href="#i-automation"></use></svg>
+              </div>
+              <h3 class="service-card__title" data-i18n="service_4_title">
+                أتمتة العمليات
+              </h3>
+              <p class="service-card__desc" data-i18n="service_4_desc">
+                حلول أتمتة ذكية لتبسيط سير العمل ورفع الكفاءة مع دعم تقني مستمر.
+              </p>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-card__icon">
+                <svg aria-hidden="true"><use href="#i-dev"></use></svg>
+              </div>
+              <h3 class="service-card__title" data-i18n="service_5_title">
+                تطوير مواقع وتطبيقات
+              </h3>
+              <p class="service-card__desc" data-i18n="service_5_desc">
+                تطوير Full-Stack لمواقع وتطبيقات متكاملة باستخدام Django و
+                FastAPI.
+              </p>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-card__icon">
+                <svg aria-hidden="true"><use href="#i-shield-safe"></use></svg>
+              </div>
+              <h3 class="service-card__title" data-i18n="service_6_title">
+                أمان وموثوقية
+              </h3>
+              <p class="service-card__desc" data-i18n="service_6_desc">
+                تطبيق أفضل ممارسات الأمن السيبراني وبناء أنظمة قابلة للتوسع
+                والاستمرارية.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section section--alt">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title" data-i18n="projects_title">المشاريع</h2>
+            <div class="section__underline"></div>
+            <p class="section__subtitle" data-i18n="projects_subtitle">
+              اضغط على أي مشروع لعرض القصة التقنية والتفاصيل التنفيذية.
+            </p>
+          </header>
+
+          <div class="projects">
+            <article
+              class="project-card reveal"
+              tabindex="0"
+              role="button"
+              aria-haspopup="dialog"
+              data-project-title="🎮 GameHajBot"
+              data-project-subtitle="نظام شحن ألعاب مؤتمت بالكامل يعمل 24/7"
+              data-project-url="https://t.me/GameHajBot"
+            >
+              <div class="project-card__media">
+                <img
+                  src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=70"
+                  alt="GameHajBot preview"
+                  loading="lazy"
+                />
+                <span class="project-card__badge">Telegram Bot</span>
+                <div class="media-glow" aria-hidden="true"></div>
+              </div>
+
+              <div class="project-card__content">
+                <h3 class="project-card__title">🎮 GameHajBot</h3>
+                <p class="project-card__desc">
+                  نظام شحن ألعاب مؤتمت بالكامل يعمل دون توقف، من الدفع حتى
+                  التسليم الفوري.
+                </p>
+
+                <div class="tags">
+                  <span class="tag">Payment Automation</span>
+                  <span class="tag">Provider API</span>
+                  <span class="tag">Transaction Logs</span>
+                  <span class="tag">24/7 Runtime</span>
+                </div>
+
+                <div class="project-card__footer">
+                  <a
+                    class="project-card__link"
+                    href="https://t.me/GameHajBot"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span data-i18n="check_it">شاهد المشروع</span>
+                    <svg class="btn__icon" aria-hidden="true">
+                      <use href="#i-external"></use>
+                    </svg>
+                  </a>
+                  <span class="project-card__hint" data-i18n="project_open_hint"
+                    >اضغط للقراءة التفصيلية</span
+                  >
+                </div>
+              </div>
+
+              <div class="project-card__details" hidden>
+                <p>
+                  هذا النظام صُمم ليعالج دورة الطلب كاملة بشكل مؤتمت: اختيار
+                  المنتج، تأكيد الدفع، تنفيذ الطلب على مزود الخدمة، ثم تسليم
+                  النتيجة للمستخدم.
+                </p>
+                <p>
+                  التحدي الأساسي كان تقليل التدخل اليدوي إلى الصفر مع المحافظة
+                  على الدقة، لذلك تم بناء منطق تحقق متدرج للحالات الحساسة (تأخير
+                  مزود، تكرار الطلب، أو اختلاف حالة الدفع).
+                </p>
+                <ul>
+                  <li>تكامل بوابات دفع أوتوماتيكية داخل تدفق موحد.</li>
+                  <li>معالجة طلبات فورية مع آليات إعادة المحاولة الذكية.</li>
+                  <li>ربط API مباشر مع مزود الخدمة للتسليم اللحظي.</li>
+                  <li>تسجيل معاملات ومراقبة أخطاء لتتبع أي حالة تشغيلية.</li>
+                </ul>
+                <p>
+                  المشروع يعمل إنتاجياً بثبات حتى عند غياب المشغل، وهذا كان
+                  الهدف الرئيسي من التصميم.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="project-card reveal"
+              tabindex="0"
+              role="button"
+              aria-haspopup="dialog"
+              data-project-title="💳 SyriatelCash Automation"
+              data-project-subtitle="نظام أتمتة دفع عبر سيريتل كاش بتدفق آمن وسريع"
+              data-project-url="https://t.me/SyriatelCash_Bot"
+            >
+              <div class="project-card__media">
+                <img
+                  src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=70"
+                  alt="SyriatelCash Automation preview"
+                  loading="lazy"
+                />
+                <span class="project-card__badge">Payment Ops</span>
+                <div class="media-glow" aria-hidden="true"></div>
+              </div>
+
+              <div class="project-card__content">
+                <h3 class="project-card__title">💳 SyriatelCash Automation</h3>
+                <p class="project-card__desc">
+                  أتمتة متكاملة للمدفوعات عبر سيريتل كاش تشمل الجلب، المطابقة،
+                  ومراقبة الحالة لحظياً.
+                </p>
+
+                <div class="tags">
+                  <span class="tag">Syriatel Cash</span>
+                  <span class="tag">Ledger Sync</span>
+                  <span class="tag">Multi-Number</span>
+                  <span class="tag">Balance Watch</span>
+                </div>
+
+                <div class="project-card__footer">
+                  <a
+                    class="project-card__link"
+                    href="https://t.me/SyriatelCash_Bot"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span data-i18n="check_it">شاهد المشروع</span>
+                    <svg class="btn__icon" aria-hidden="true">
+                      <use href="#i-external"></use>
+                    </svg>
+                  </a>
+                  <span class="project-card__hint" data-i18n="project_open_hint"
+                    >اضغط للقراءة التفصيلية</span
+                  >
+                </div>
+              </div>
+
+              <div class="project-card__details" hidden>
+                <p>
+                  هذا النظام بُني للتعامل مع المدفوعات الواقعية التي تحتاج سرعة
+                  مطابقة عالية ودقة في ربط التحويل بطلب العميل الصحيح.
+                </p>
+                <ul>
+                  <li>جلب السجلات تلقائياً مع تنظيف البيانات قبل المطابقة.</li>
+                  <li>مراقبة الأرصدة والتنبيه عند تغيرات حرجة.</li>
+                  <li>ربط الطلبات بالتحويلات وفق قواعد تحقق واضحة.</li>
+                  <li>إدارة أرقام متعددة ضمن نفس طبقة التشغيل.</li>
+                </ul>
+                <p>
+                  التصميم ركّز على استجابة منخفضة وموثوقية في سيناريوهات الضغط
+                  العالي.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="project-card reveal"
+              tabindex="0"
+              role="button"
+              aria-haspopup="dialog"
+              data-project-title="💰 ShamCash Automation"
+              data-project-subtitle="تحقق مدفوعات متعدد العملات بزمن استجابة يقارب ثانية واحدة"
+            >
+              <div class="project-card__media">
+                <img
+                  src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=70"
+                  alt="ShamCash Automation preview"
+                  loading="lazy"
+                />
+                <span class="project-card__badge">Multi-Currency</span>
+                <div class="media-glow" aria-hidden="true"></div>
+              </div>
+
+              <div class="project-card__content">
+                <h3 class="project-card__title">💰 ShamCash Automation</h3>
+                <p class="project-card__desc">
+                  نظام أتمتة دفع يدعم ثلاث عملات مع معالجة تحقق ذكية وسريعة
+                  للحوالات.
+                </p>
+
+                <div class="tags">
+                  <span class="tag">SYP / TRY / USD</span>
+                  <span class="tag">Payment Verification</span>
+                  <span class="tag">Matching Engine</span>
+                  <span class="tag">1s Response</span>
+                </div>
+
+                <div class="project-card__footer">
+                  <span
+                    class="project-card__private"
+                    data-i18n="project_private"
+                    >رابط خاص</span
+                  >
+                  <span class="project-card__hint" data-i18n="project_open_hint"
+                    >اضغط للقراءة التفصيلية</span
+                  >
+                </div>
+              </div>
+
+              <div class="project-card__details" hidden>
+                <p>
+                  تم تطوير هذا المشروع لمعالجة تدفقات دفع متعددة العملات ضمن
+                  نظام واحد، مع الحفاظ على زمن استجابة منخفض جداً.
+                </p>
+                <ul>
+                  <li>دعم الليرة السورية، الليرة التركية، والدولار.</li>
+                  <li>طبقة تحقق مدفوعات تتعامل مع اختلاف صيغ البيانات.</li>
+                  <li>ربط تلقائي بين حالة الدفع والطلب التنفيذي.</li>
+                  <li>تحسينات أداء للوصول إلى استجابة تقارب ثانية واحدة.</li>
+                </ul>
+                <p>
+                  النتيجة كانت تدفق معاملات مستقر وسريع حتى مع اختلاف مصادر
+                  الدفع.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="project-card reveal"
+              tabindex="0"
+              role="button"
+              aria-haspopup="dialog"
+              data-project-title="🎓 Sanassa - Educational Platform"
+              data-project-subtitle="Laravel backend architecture لمنصة تعليمية متكاملة"
+            >
+              <div class="project-card__media">
+                <img
+                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=70"
+                  alt="Sanassa educational platform preview"
+                  loading="lazy"
+                />
+                <span class="project-card__badge">Laravel Backend</span>
+                <div class="media-glow" aria-hidden="true"></div>
+              </div>
+
+              <div class="project-card__content">
+                <h3 class="project-card__title">
+                  🎓 Sanassa - Educational Platform
+                </h3>
+                <p class="project-card__desc">
+                  بناء البنية الخلفية الكاملة لمنصة تعليمية مع طبقات إدارة
+                  وصلاحيات وتكامل API.
+                </p>
+
+                <div class="tags">
+                  <span class="tag">Laravel</span>
+                  <span class="tag">RBAC</span>
+                  <span class="tag">Learning Content</span>
+                  <span class="tag">Scalable APIs</span>
+                </div>
+
+                <div class="project-card__footer">
+                  <span
+                    class="project-card__private"
+                    data-i18n="project_private"
+                    >رابط خاص</span
+                  >
+                  <span class="project-card__hint" data-i18n="project_open_hint"
+                    >اضغط للقراءة التفصيلية</span
+                  >
+                </div>
+              </div>
+
+              <div class="project-card__details" hidden>
+                <p>
+                  في هذا المشروع كان التركيز على بناء أساس تقني قادر على التوسع
+                  مع ازدياد المحتوى وعدد المستخدمين دون تعقيد إداري.
+                </p>
+                <ul>
+                  <li>إدارة مستخدمين وصلاحيات على مستويات متعددة.</li>
+                  <li>نظام محتوى تعليمي منظّم وقابل للتوسعة.</li>
+                  <li>معالجة التسجيلات وربطها بمنطق الأعمال.</li>
+                  <li>API Layer واضح لتكامل الواجهات والتطبيقات الأخرى.</li>
+                </ul>
+                <p>
+                  الهيكلية صممت لتكون قابلة للصيانة طويلة المدى مع فصل جيد
+                  للمسؤوليات.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="project-card reveal"
+              tabindex="0"
+              role="button"
+              aria-haspopup="dialog"
+              data-project-title="🌐 Appointment Booking Website"
+              data-project-subtitle="منصة حجز مواعيد إنتاجية مبنية على FastAPI"
+              data-project-url="https://smilemakersksa.com/"
+            >
+              <div class="project-card__media">
+                <img
+                  src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=1200&q=70"
+                  alt="Appointment booking website preview"
+                  loading="lazy"
+                />
+                <span class="project-card__badge">FastAPI Production</span>
+                <div class="media-glow" aria-hidden="true"></div>
+              </div>
+
+              <div class="project-card__content">
+                <h3 class="project-card__title">
+                  🌐 Appointment Booking Website
+                </h3>
+                <p class="project-card__desc">
+                  نظام حجز مواعيد متكامل لشركة سعودية مع بنية تشغيلية نظيفة
+                  قابلة للتوسع.
+                </p>
+
+                <div class="tags">
+                  <span class="tag">FastAPI</span>
+                  <span class="tag">Notifications</span>
+                  <span class="tag">Production Deploy</span>
+                  <span class="tag">Clean Architecture</span>
+                </div>
+
+                <div class="project-card__footer">
+                  <a
+                    class="project-card__link"
+                    href="https://smilemakersksa.com/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span data-i18n="check_it">شاهد المشروع</span>
+                    <svg class="btn__icon" aria-hidden="true">
+                      <use href="#i-external"></use>
+                    </svg>
+                  </a>
+                  <span class="project-card__hint" data-i18n="project_open_hint"
+                    >اضغط للقراءة التفصيلية</span
+                  >
+                </div>
+              </div>
+
+              <div class="project-card__details" hidden>
+                <p>
+                  المشروع نُفذ كبيئة إنتاجية حقيقية لخدمة الحجز، لذلك تم التركيز
+                  على الاستقرار وسهولة إدارة العمليات اليومية.
+                </p>
+                <ul>
+                  <li>Backend مبني باستخدام FastAPI مع تدفق واضح للطلبات.</li>
+                  <li>إدارة مواعيد بشكل منظم مع قابلية إضافة قواعد جديدة.</li>
+                  <li>نظام إشعارات مرتبط بحالة الموعد وتحديثاته.</li>
+                  <li>بنية قابلة للتوسع لزيادة عدد الفروع أو الخدمات.</li>
+                </ul>
+                <p>
+                  الهدف كان تسليم نظام سريع وعملي للاستخدام الفعلي وليس نموذجاً
+                  تجريبياً.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="project-card reveal"
+              tabindex="0"
+              role="button"
+              aria-haspopup="dialog"
+              data-project-title="🎓 Community & University Management Bots"
+              data-project-subtitle="بوتات لإدارة المجتمع الجامعي والخدمات الطلابية"
+              data-project-url="https://t.me/Community_DTC_BOT"
+            >
+              <div class="project-card__media">
+                <img
+                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=70"
+                  alt="Community management bots preview"
+                  loading="lazy"
+                />
+                <span class="project-card__badge">Academic Bots</span>
+                <div class="media-glow" aria-hidden="true"></div>
+              </div>
+
+              <div class="project-card__content">
+                <h3 class="project-card__title">
+                  🎓 Community &amp; University Management Bots
+                </h3>
+                <p class="project-card__desc">
+                  بوتات خدمية لبيئة جامعية تشمل إدارة الأعضاء، نشر المحاضرات،
+                  وعرض العلامات.
+                </p>
+
+                <div class="tags">
+                  <span class="tag">Community Ops</span>
+                  <span class="tag">Student Services</span>
+                  <span class="tag">Broadcasting</span>
+                  <span class="tag">Telegram Admin</span>
+                </div>
+
+                <div class="project-card__footer">
+                  <a
+                    class="project-card__link"
+                    href="https://t.me/Community_DTC_BOT"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span data-i18n="check_it">شاهد المشروع</span>
+                    <svg class="btn__icon" aria-hidden="true">
+                      <use href="#i-external"></use>
+                    </svg>
+                  </a>
+                  <span class="project-card__hint" data-i18n="project_open_hint"
+                    >اضغط للقراءة التفصيلية</span
+                  >
+                </div>
+              </div>
+
+              <div class="project-card__details" hidden>
+                <p>
+                  هذه المجموعة من البوتات صممت لخدمة مجتمع جامعي فعلي، مع تنظيم
+                  خدمات الأكاديمية ضمن أوامر واضحة وسريعة.
+                </p>
+                <ul>
+                  <li>إدارة أعضاء وصلاحيات داخل المجتمع الطلابي.</li>
+                  <li>نشر محاضرات ومواد بشكل منظم.</li>
+                  <li>عرض علامات وتحديثات أكاديمية.</li>
+                  <li>إرسال جماعي وإدارة قنوات التواصل.</li>
+                </ul>
+                <p>
+                  تعمل هذه الحلول عبر:
+                  <a
+                    class="link"
+                    href="https://t.me/Community_DTC_BOT"
+                    target="_blank"
+                    rel="noopener"
+                    >@Community_DTC_BOT</a
+                  >
+                  و
+                  <a
+                    class="link"
+                    href="https://t.me/Science_2022bot"
+                    target="_blank"
+                    rel="noopener"
+                    >@Science_2022bot</a
+                  >.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="project-card reveal"
+              tabindex="0"
+              role="button"
+              aria-haspopup="dialog"
+              data-project-title="🛒 Game Store & Gift Card Systems"
+              data-project-subtitle="أنظمة بيع رقمية متكاملة للمنتجات الرقمية وبطاقات الهدايا"
+              data-project-url="https://t.me/game_store11_bot"
+            >
+              <div class="project-card__media">
+                <img
+                  src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1200&q=70"
+                  alt="Game store and gift cards preview"
+                  loading="lazy"
+                />
+                <span class="project-card__badge">Digital Commerce</span>
+                <div class="media-glow" aria-hidden="true"></div>
+              </div>
+
+              <div class="project-card__content">
+                <h3 class="project-card__title">
+                  🛒 Game Store &amp; Gift Card Systems
+                </h3>
+                <p class="project-card__desc">
+                  أنظمة بيع رقمية تتضمن إدارة منتجات، نظام وكلاء، وربط دفع مع
+                  تنفيذ فوري للطلبات.
+                </p>
+
+                <div class="tags">
+                  <span class="tag">Digital Products</span>
+                  <span class="tag">Agent System</span>
+                  <span class="tag">Payment Linking</span>
+                  <span class="tag">Auto Fulfillment</span>
+                </div>
+
+                <div class="project-card__footer">
+                  <a
+                    class="project-card__link"
+                    href="https://t.me/game_store11_bot"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span data-i18n="check_it">شاهد المشروع</span>
+                    <svg class="btn__icon" aria-hidden="true">
+                      <use href="#i-external"></use>
+                    </svg>
+                  </a>
+                  <span class="project-card__hint" data-i18n="project_open_hint"
+                    >اضغط للقراءة التفصيلية</span
+                  >
+                </div>
+              </div>
+
+              <div class="project-card__details" hidden>
+                <p>
+                  هذا النظام بُني كمتجر رقمي عملي لبيع الألعاب وبطاقات الهدايا
+                  ضمن تدفق متكامل من الطلب حتى التسليم.
+                </p>
+                <ul>
+                  <li>إدارة منتجات مرنة مع تحديثات سريعة.</li>
+                  <li>منطق وكلاء يسهّل التوزيع على أكثر من قناة.</li>
+                  <li>ربط مدفوعات مباشر مع تحقق لحظي من التحويل.</li>
+                  <li>تنفيذ فوري للطلبات بعد اكتمال شروط الدفع.</li>
+                </ul>
+                <p>
+                  الحسابات المرتبطة بالمشروع:
+                  <a
+                    class="link"
+                    href="https://t.me/game_store11_bot"
+                    target="_blank"
+                    rel="noopener"
+                    >@game_store11_bot</a
+                  >
+                  و
+                  <a
+                    class="link"
+                    href="https://t.me/GAMA_CARD2_BOT"
+                    target="_blank"
+                    rel="noopener"
+                    >@GAMA_CARD2_BOT</a
+                  >.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="project-card reveal"
+              tabindex="0"
+              role="button"
+              aria-haspopup="dialog"
+              data-project-title="👥 Followers Automation Bot"
+              data-project-subtitle="أتمتة بيع رشق متابعين عبر منصة خارجية ونظام دفع متكامل"
+            >
+              <div class="project-card__media">
+                <img
+                  src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&w=1200&q=70"
+                  alt="Followers automation bot preview"
+                  loading="lazy"
+                />
+                <span class="project-card__badge">Social Automation</span>
+                <div class="media-glow" aria-hidden="true"></div>
+              </div>
+
+              <div class="project-card__content">
+                <h3 class="project-card__title">👥 Followers Automation Bot</h3>
+                <p class="project-card__desc">
+                  بوت مؤتمت لطلبات رشق المتابعين مرتبط بمزود خارجي مع معالجة
+                  كاملة للطلبات والدفع.
+                </p>
+
+                <div class="tags">
+                  <span class="tag">External Platform</span>
+                  <span class="tag">Order Queues</span>
+                  <span class="tag">Payment Integrated</span>
+                  <span class="tag">Auto Processing</span>
+                </div>
+
+                <div class="project-card__footer">
+                  <span
+                    class="project-card__private"
+                    data-i18n="project_private"
+                    >رابط خاص</span
+                  >
+                  <span class="project-card__hint" data-i18n="project_open_hint"
+                    >اضغط للقراءة التفصيلية</span
+                  >
+                </div>
+              </div>
+
+              <div class="project-card__details" hidden>
+                <p>
+                  الفكرة كانت بناء تدفق مؤتمت لطلبات خدمات التواصل الاجتماعي دون
+                  الحاجة للمعالجة اليدوية لكل عملية.
+                </p>
+                <ul>
+                  <li>ربط مباشر مع منصة خارجية لتوريد الخدمة.</li>
+                  <li>استقبال طلبات العملاء والتحقق من الدفع تلقائياً.</li>
+                  <li>تمرير الطلبات إلى المزود مع متابعة الحالة.</li>
+                  <li>تسجيل كامل للعمليات لمراجعة الأداء وحالات الفشل.</li>
+                </ul>
+                <p>
+                  تم التركيز هنا على استقرار دورة الطلب، وليس فقط تنفيذ أوامر
+                  منفصلة.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Payments -->
+      <section id="payments" class="section section--payments">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title" data-i18n="payments_title">
+              طرق الدفع المتوفرة
+            </h2>
+            <div class="section__underline"></div>
+            <p class="section__subtitle" data-i18n="payments_subtitle">
+              سلايدر متحرك جذاب — يتم إيقافه عند المرور بالماوس
+            </p>
+          </header>
+
+          <div
+            class="marquee"
+            role="region"
+            aria-label="Payment methods slider"
+          >
+            <div class="marquee__track" id="paymentsTrack">
+              <div class="pay-card">
+                <div class="pay-card__icon">
+                  <svg><use href="#i-phone"></use></svg>
+                </div>
+                <div class="pay-card__title">Syriatel Cash</div>
+              </div>
+              <div class="pay-card">
+                <div class="pay-card__icon">
+                  <svg><use href="#i-card"></use></svg>
+                </div>
+                <div class="pay-card__title">Visa / MasterCard</div>
+              </div>
+              <div class="pay-card">
+                <div class="pay-card__icon">
+                  <svg><use href="#i-eth"></use></svg>
+                </div>
+                <div class="pay-card__title">Crypto</div>
+              </div>
+              <div class="pay-card">
+                <div class="pay-card__icon">
+                  <svg><use href="#i-coins"></use></svg>
+                </div>
+                <div class="pay-card__title">CoinEx</div>
+              </div>
+              <div class="pay-card">
+                <div class="pay-card__icon">
+                  <svg><use href="#i-wallet"></use></svg>
+                </div>
+                <div class="pay-card__title">Payeer</div>
+              </div>
+              <div class="pay-card">
+                <div class="pay-card__icon">
+                  <svg><use href="#i-bitcoin"></use></svg>
+                </div>
+                <div class="pay-card__title">Binance</div>
+              </div>
+              <div class="pay-card">
+                <div class="pay-card__icon">
+                  <svg><use href="#i-paypal"></use></svg>
+                </div>
+                <div class="pay-card__title">PayPal</div>
+              </div>
+              <div class="pay-card">
+                <div class="pay-card__icon">
+                  <svg><use href="#i-bank"></use></svg>
+                </div>
+                <div class="pay-card__title" data-i18n="bank_label">
+                  بنك محلي
+                </div>
+              </div>
+              <div class="pay-card">
+                <div class="pay-card__icon">
+                  <svg><use href="#i-cash"></use></svg>
+                </div>
+                <div class="pay-card__title">Sham Cash</div>
+              </div>
+              <div class="pay-card">
+                <div class="pay-card__icon">
+                  <svg><use href="#i-phone"></use></svg>
+                </div>
+                <div class="pay-card__title">MTN Cash</div>
+              </div>
+            </div>
+          </div>
+
+          <p class="payments-note" data-i18n="payments_note">
+            تقدر تبدّل الأيقونات والأسماء بسهولة — كل عنصر داخل السلايدر عبارة
+            عن بطاقة مستقلة.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title" data-i18n="contact_title">تواصل معي</h2>
+            <div class="section__underline"></div>
+          </header>
+
+          <form class="contact-form reveal" id="contactForm">
+            <div class="field">
+              <label
+                class="field__label"
+                for="titleInput"
+                data-i18n="contact_label_title"
+                >العنوان</label
+              >
+              <input
+                id="titleInput"
+                name="title"
+                type="text"
+                required
+                autocomplete="off"
+                data-i18n-placeholder="contact_title_ph"
+                placeholder="ما موضوع رسالتك؟"
+              />
+            </div>
+
+            <div class="field">
+              <label
+                class="field__label"
+                for="messageInput"
+                data-i18n="contact_label_message"
+                >الرسالة</label
+              >
+              <textarea
+                id="messageInput"
+                name="message"
+                rows="8"
+                required
+                data-i18n-placeholder="contact_message_ph"
+                placeholder="اكتب رسالتك هنا..."
+              ></textarea>
+            </div>
+
+            <button
+              class="btn btn--primary contact-form__submit"
+              type="submit"
+              data-i18n="contact_submit"
+            >
+              إرسال
+            </button>
+
+            <p class="form-hint" data-i18n="contact_hint">
+              عند الإرسال سيتم فتح برنامج البريد لديك تلقائياً (mailto). يمكنك
+              تغيير الإيميل داخل main.js.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+      <div class="project-modal__backdrop" data-close-modal></div>
+      <div
+        class="project-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="projectModalTitle"
+      >
+        <button
+          class="project-modal__close"
+          id="projectModalClose"
+          type="button"
+          aria-label="إغلاق"
+          data-i18n-aria="project_modal_close"
+        >
+          ×
+        </button>
+
+        <p class="project-modal__eyebrow" data-i18n="project_modal_label">
+          تفاصيل المشروع
+        </p>
+        <h3 class="project-modal__title" id="projectModalTitle"></h3>
+        <p class="project-modal__subtitle" id="projectModalSubtitle"></p>
+
+        <div class="project-modal__body" id="projectModalBody"></div>
+
+        <a
+          class="btn btn--primary project-modal__link"
+          id="projectModalLink"
+          href="#"
+          target="_blank"
+          rel="noopener"
+          data-i18n="project_modal_visit"
+        >
+          فتح الرابط
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div class="footer__col">
+          <div class="footer__title" data-i18n="footer_brand_title">
+            فايز الشامي
+          </div>
+          <p class="footer__text" data-i18n-html="footer_brand_desc">
+            مطور ويب بخبرة يبني منتجات <span class="accent">سريعة</span> و<span
+              class="accent"
+              >متاحة</span
+            >
+            بتجربة مميزة.
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__title" data-i18n="footer_design_title">
+            Design
+          </div>
+          <p class="footer__text" data-i18n-html="footer_design_text">
+            <a
+              class="link"
+              href="https://fayezalshami.com/"
+              target="_blank"
+              rel="noopener"
+              >Fayez Alshami</a
+            >
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__title" data-i18n="footer_social_title">
+            Social
+          </div>
+          <div class="social">
+            <a
+              class="icon-btn social__link"
+              data-brand="telegram"
+              href="https://t.me/Fayez_Alshami"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+            >
+              <svg aria-hidden="true"><use href="#i-telegram"></use></svg>
+            </a>
+            <a
+              class="icon-btn social__link"
+              data-brand="whatsapp"
+              href="https://wa.me/message/U4CH4MFWMFZF2J1"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <svg aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+            </a>
+            <a
+              class="icon-btn social__link"
+              data-brand="email"
+              href="mailto:fayezalshami.dev@gmail.com"
+              aria-label="Email"
+            >
+              <svg aria-hidden="true"><use href="#i-email"></use></svg>
+            </a>
+            <a
+              class="icon-btn social__link"
+              data-brand="github"
+              href="https://github.com/FayezAlshami"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <svg aria-hidden="true"><use href="#i-github"></use></svg>
+            </a>
+            <a
+              class="icon-btn social__link"
+              data-brand="facebook"
+              href="https://www.facebook.com/FayezAlshami.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <svg aria-hidden="true"><use href="#i-facebook"></use></svg>
+            </a>
+            <a
+              class="icon-btn social__link"
+              data-brand="linkedin"
+              href="https://www.linkedin.com/in/FayezAlshami"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <svg aria-hidden="true"><use href="#i-linkedin"></use></svg>
+            </a>
+            <a
+              class="icon-btn social__link"
+              data-brand="reddit"
+              href="https://www.reddit.com/user/FayezAlshami/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Reddit"
+            >
+              <svg aria-hidden="true"><use href="#i-reddit"></use></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer__bottom">
+        <span data-i18n="footer_copy">© جميع الحقوق محفوظة</span>
+      </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+      <svg aria-hidden="true"><use href="#i-up"></use></svg>
+    </button>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

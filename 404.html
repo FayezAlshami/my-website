@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#22c55e" />
+    <title>404 — Page Not Found</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Calibri,Segoe+UI,Tahoma,Arial,sans-serif&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/404.css" />
+    <script>
+      (function () {
+        var t = localStorage.getItem("site_theme");
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+          document.documentElement.classList.toggle("theme-light", t === "light");
+        }
+      })();
+    </script>
+  </head>
+  <body class="page-404">
+    <div class="error-404">
+      <div class="error-404__bg" aria-hidden="true">
+        <span class="error-404__orb error-404__orb--1"></span>
+        <span class="error-404__orb error-404__orb--2"></span>
+        <span class="error-404__orb error-404__orb--3"></span>
+        <span class="error-404__grid"></span>
+      </div>
+
+      <div class="error-404__content">
+        <div class="error-404__code">
+          <span class="error-404__digit" data-digit="4">4</span>
+          <span class="error-404__digit error-404__digit--zero" data-digit="0">0</span>
+          <span class="error-404__digit" data-digit="4">4</span>
+        </div>
+        <p class="error-404__message">
+          The page you’re looking for doesn’t exist or has moved.
+        </p>
+        <a href="index.html" class="btn btn--primary error-404__btn">
+          Back to home
+        </a>
+      </div>
+
+      <div class="error-404__float" aria-hidden="true">
+        <span class="error-404__dot"></span>
+        <span class="error-404__dot"></span>
+        <span class="error-404__dot"></span>
+        <span class="error-404__dot"></span>
+        <span class="error-404__dot"></span>
+        <span class="error-404__dot"></span>
+      </div>
+    </div>
+  </body>
+</html>
